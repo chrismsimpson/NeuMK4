@@ -9,8 +9,8 @@ struct NeuTokenizer * createNeuTokenizer(
 
     struct NeuTokenizer * tokenizer;
 
-    if ((tokenizer = malloc(sizeof * tokenizer)) != NULL)
-    {
+    if ((tokenizer = malloc(sizeof * tokenizer)) != NULL) {
+        
         tokenizer->scanner = scanner;
     }
 
@@ -36,8 +36,8 @@ void deleteNeuTokenizer(
 struct SourceLocation getNeuTokenizerPosition(
     const struct NeuTokenizer * tokenizer) {
 
-    if (tokenizer->index + 1 <= tokenizer->tokens->count)
-    {
+    if (tokenizer->index + 1 <= tokenizer->tokens->count) {
+
         return getNeuTokenStart(&tokenizer->tokens->tokens[tokenizer->index]);
     }
 

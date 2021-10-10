@@ -1,8 +1,8 @@
 #include "NeuToken.h"
 
 struct SourceLocation getNeuTokenStart(
-    const struct NeuToken * token)
-{
+    const struct NeuToken * token) {
+        
     switch (token->tokenType) {
 
     case neuTokenTypePunc:

@@ -1,5 +1,7 @@
 #include "NeuParser.h"
 
+#include "../../SourceLocation.h"
+
 #include "../Tokenizer/NeuTokenizer.c"
 
 struct NeuParser * createNeuParser(
@@ -7,8 +9,8 @@ struct NeuParser * createNeuParser(
 
     struct NeuParser * parser;
 
-    if ((parser = malloc(sizeof * parser)) != NULL)
-    {
+    if ((parser = malloc(sizeof * parser)) != NULL) {
+        
         parser->tokenizer = tokenizer;
     }
   
@@ -32,9 +34,9 @@ void deleteNeuParser(
 }
 
 struct NeuSourceFile * parseNeuSourceFile(
-    const struct NeuParser * parser)
-{
-    
+    const struct NeuParser * parser) {
+
+    struct SourceLocation start = getNeuTokenizerPosition(parser->tokenizer);
 
     return NULL;
 }

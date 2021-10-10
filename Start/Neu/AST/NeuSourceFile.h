@@ -6,6 +6,8 @@
 
 #include "../../SourceLocation.h"
 
+#include "../AST/NeuNode.h"
+
 #include "NeuNode.h"
 
 struct NeuSourceFile {
@@ -14,6 +16,13 @@ struct NeuSourceFile {
     const struct SourceLocation start;
     const struct SourceLocation end;
 };
+
+///
+
+struct NeuSourceFile * createNeuSourceFile(
+    const struct ListOfNeuNodes * nodes,
+    const struct SourceLocation start,
+    const struct SourceLocation end);
 
 void deleteNeuSourceFile(
     struct NeuSourceFile * sourceFile);
