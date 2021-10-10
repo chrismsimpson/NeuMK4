@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/chris/Neu/Build",
+  "command": "/usr/bin/clang -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -o CMakeFiles/main.dir/main.c.o -c /Users/chris/Neu/Start/main.c",
+  "file": "/Users/chris/Neu/Start/main.c"
+}
+]
