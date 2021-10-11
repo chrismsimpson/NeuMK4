@@ -6,8 +6,6 @@
 
 #include "../../SourceLocation.h"
 
-#include "../AST/NeuNode.h"
-
 #include "NeuNode.h"
 
 struct NeuSourceFile {

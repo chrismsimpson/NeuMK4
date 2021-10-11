@@ -1,20 +1,20 @@
 #include <stdio.h>
 
-// #include "Neu/AST/NeuNode.c"
+#include "Neu/AST/NeuCodeBlockItem.c"
 #include "Neu/AST/NeuSourceFile.c"
 #include "Neu/Parser/NeuParser.c"
-// #include "Neu/Tokenizer/NeuTokenizer.c"
-// #include "Neu/Tokens/NeuToken.c"
+
+int someFunc();
 
 int main() {
 
     const struct NeuParser * parser = createNeuParserFromFile("test.txt");
 
-    const struct NeuSourceFile * sourceFile = parseNeuSourceFile(parser);
+    const struct NeuNode * sourceFile = parseNeuSourceFile(parser);
 
-    deleteNeuSourceFile((struct NeuSourceFile *) sourceFile); 
+    deleteNeuNode((struct NeuNode *) sourceFile);
 
-    // deleteNeuParser((struct NeuParser *) parser);
+    deleteNeuParser((struct NeuParser *) parser);
 
     ///
 
@@ -23,4 +23,9 @@ int main() {
     ///
 
     return 0;
+}
+
+int someFunc() {
+
+    return 1;
 }

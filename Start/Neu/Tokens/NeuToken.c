@@ -1,5 +1,30 @@
 #include "NeuToken.h"
 
+struct ListOfNeuTokens * createEmptyListOfNeuTokens() {
+
+    struct ListOfNeuTokens * tokens;
+
+    if ((tokens = malloc(sizeof * tokens)) != NULL) {
+
+        tokens->tokens = NULL;
+        * (int *) &tokens->count = 0;
+    }
+
+    return tokens;
+}
+
+///
+
+void deleteListOfNeuTokens(
+    struct ListOfNeuTokens * tokenList) {
+
+    free(tokenList);
+
+    tokenList = NULL;
+}
+
+///
+
 struct SourceLocation getNeuTokenStart(
     const struct NeuToken * token) {
         

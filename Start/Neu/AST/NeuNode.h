@@ -4,8 +4,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct ListOfNeuNodes {
+
+    const struct NeuNode * nodes;
+
+    const int count;
+};
+
 enum NeuNodeType {
 
+    neuNodeTypeCodeBlockItem,
+    neuNodeTypeCodeBlockItemList,
     neuNodeTypeSourceFile
 };
 
@@ -16,18 +25,22 @@ struct NeuNode {
     const void * value;
 };
 
-struct ListOfNeuNodes {
+///
 
-    const struct NeuNode * nodes;
-
-    const int count;
-};
+void addNodeToListOfNeuNodes(
+    const struct ListOfNeuNodes * list,
+    const struct NeuNode * node);
 
 ///
 
 struct ListOfNeuNodes * createEmptyListOfNeuNodes();
 
+///
+
 void deleteListOfNeuNodes(
     struct ListOfNeuNodes * nodes);
+
+void deleteNeuNode(
+    struct NeuNode * node);
 
 #endif

@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 #include "../AST/NeuSourceFile.h"
+#include "../AST/NeuCodeBlockItem.h"
 #include "../Tokenizer/NeuTokenizer.h"
 
 #include "NeuParser.h"
@@ -23,7 +24,10 @@ struct NeuParser * createNeuParserFromFile(
 void deleteNeuParser(
     struct NeuParser * p);
 
-struct NeuSourceFile * parseNeuSourceFile(
+struct NeuNode * parseNeuSourceFile(
+    const struct NeuParser * parser);
+
+struct NeuNode * parseNeuCodeBlockItemList(
     const struct NeuParser * parser);
 
 #endif

@@ -13,16 +13,20 @@ struct NeuTokenizer {
 
     const struct Scanner * scanner;
 
-    const struct ListOfNeuTokens * tokens;
+    const struct ListOfNeuTokens * tokenList;
 
     int index;
 };
+
+///
 
 struct NeuTokenizer * createNeuTokenizer(
     const struct Scanner * scanner);
 
 struct NeuTokenizer * createNeuTokenizerFromFile(
     const char * filename);
+
+///
 
 struct SourceLocation getNeuTokenizerPosition(
     const struct NeuTokenizer * tokenizer);

@@ -2,6 +2,7 @@
 
 #include "../../SourceLocation.h"
 
+#include "../AST/NeuNode.c"
 #include "../Tokenizer/NeuTokenizer.c"
 
 struct NeuParser * createNeuParser(
@@ -22,7 +23,7 @@ struct NeuParser * createNeuParserFromFile(
 
     const struct NeuTokenizer * tokenizer = createNeuTokenizerFromFile(filename);
 
-    return NULL;
+    return createNeuParser(tokenizer);
 }
 
 void deleteNeuParser(
@@ -33,10 +34,35 @@ void deleteNeuParser(
     parser = NULL;
 }
 
-struct NeuSourceFile * parseNeuSourceFile(
+struct NeuNode * parseNeuSourceFile(
     const struct NeuParser * parser) {
 
     struct SourceLocation start = getNeuTokenizerPosition(parser->tokenizer);
 
-    return NULL;
+    ///
+
+    struct ListOfNeuNodes * children = createEmptyListOfNeuNodes();
+
+    ///
+
+    struct NeuNode * list = parseNeuCodeBlockItemList(parser);
+
+
+
+    return createNeuNode(neuNodeTypeSourceFile, NULL);
 }
+
+struct NeuNode * parseNeuCodeBlockItemList(
+    const struct NeuParser * parser) {
+
+    struct SourceLocation start = getNeuTokenizerPosition(parser->tokenizer);
+
+    ///
+
+
+
+    ///
+
+    return createNeuNode(neuNodeTypeCodeBlockItemList, NULL);
+}
+

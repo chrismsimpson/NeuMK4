@@ -1,6 +1,9 @@
 #ifndef NEU_TOKEN_H
 #define NEU_TOKEN_H
 
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "../../SourceLocation.h"
 
 enum NeuTokenType {
@@ -21,6 +24,17 @@ struct ListOfNeuTokens {
 
     const int count;
 };
+
+///
+
+struct ListOfNeuTokens * createEmptyListOfNeuTokens();
+
+///
+
+void deleteListOfNeuTokens(
+    struct ListOfNeuTokens * tokenList);
+
+///
 
 struct SourceLocation getNeuTokenStart(
     const struct NeuToken * token);

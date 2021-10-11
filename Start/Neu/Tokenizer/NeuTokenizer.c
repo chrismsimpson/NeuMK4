@@ -12,6 +12,10 @@ struct NeuTokenizer * createNeuTokenizer(
     if ((tokenizer = malloc(sizeof * tokenizer)) != NULL) {
         
         tokenizer->scanner = scanner;
+
+        tokenizer->tokenList = createEmptyListOfNeuTokens();
+
+        tokenizer->index = 0;
     }
 
     return tokenizer;
@@ -25,20 +29,30 @@ struct NeuTokenizer * createNeuTokenizerFromFile(
     return createNeuTokenizer(scanner);
 }
 
+///
+
 void deleteNeuTokenizer(
     struct NeuTokenizer * tokenizer) {
+
+    deleteScanner((struct Scanner *) tokenizer->scanner);
+
+    deleteListOfNeuTokens((struct ListOfNeuTokens *) tokenizer->tokenList);
+
+    ///
 
     free(tokenizer);
 
     tokenizer = NULL;
 }
 
+///
+
 struct SourceLocation getNeuTokenizerPosition(
     const struct NeuTokenizer * tokenizer) {
 
-    if (tokenizer->index + 1 <= tokenizer->tokens->count) {
+    if (tokenizer->index + 1 <= tokenizer->tokenList->count) {
 
-        return getNeuTokenStart(&tokenizer->tokens->tokens[tokenizer->index]);
+        return getNeuTokenStart(&tokenizer->tokenList->tokens[tokenizer->index]);
     }
 
     ///
