@@ -53,11 +53,19 @@ void deleteNeuNode(
 
     case neuNodeTypeCodeBlockItem:
 
+        deleteNeuCodeBlockItem((struct NeuCodeBlockItem *) node->value);
+
         break;
+
+    ///
 
     case neuNodeTypeCodeBlockItemList:
 
+        deleteNeuCodeBlockItemList((struct NeuCodeBlockItemList *) node->value);
+
         break;
+
+    ///
     
     case neuNodeTypeSourceFile:
 

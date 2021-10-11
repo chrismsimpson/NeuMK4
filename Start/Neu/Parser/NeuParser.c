@@ -2,7 +2,9 @@
 
 #include "../../SourceLocation.h"
 
+#include "../AST/NeuCodeBlockItem.c"
 #include "../AST/NeuNode.c"
+#include "../AST/NeuSourceFile.c"
 #include "../Tokenizer/NeuTokenizer.c"
 
 struct NeuParser * createNeuParser(

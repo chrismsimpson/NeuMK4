@@ -1,10 +1,6 @@
 #include <stdio.h>
 
-#include "Neu/AST/NeuCodeBlockItem.c"
-#include "Neu/AST/NeuSourceFile.c"
 #include "Neu/Parser/NeuParser.c"
-
-int someFunc();
 
 int main() {
 
@@ -23,9 +19,4 @@ int main() {
     ///
 
     return 0;
-}
-
-int someFunc() {
-
-    return 1;
 }
