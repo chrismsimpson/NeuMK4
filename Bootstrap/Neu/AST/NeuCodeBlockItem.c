@@ -7,6 +7,7 @@ struct ListOfNeuCodeBlockItems * createEmptyListOfNeuCodeBlockItems() {
     if ((list = malloc(sizeof * list)) != NULL) {
 
         list->items = NULL;
+        
         * (int *) &list->count = 0;
     }
 
@@ -23,7 +24,9 @@ struct NeuCodeBlockItem * createNeuCodeBlockItem(
     if ((item = malloc(sizeof * item)) != NULL) {
 
         item->children = children;
+
         * (struct SourceLocation *) &item->start = start;
+
         * (struct SourceLocation *) &item->end = end;
     }
 
@@ -40,7 +43,9 @@ struct NeuCodeBlockItemList * createNeuCodeBlockItemList(
     if ((itemList = malloc(sizeof * itemList)) != NULL) {
 
         itemList->children = children;
+
         * (struct SourceLocation *) &itemList->start = start;
+
         * (struct SourceLocation *) &itemList->end = end;
     }
 

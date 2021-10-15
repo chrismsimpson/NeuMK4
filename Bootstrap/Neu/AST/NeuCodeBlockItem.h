@@ -18,14 +18,18 @@ struct ListOfNeuCodeBlockItems {
 struct NeuCodeBlockItem {
 
     const struct ListOfNeuNodes * children;
+
     const struct SourceLocation start;
+
     const struct SourceLocation end;
 };
 
 struct NeuCodeBlockItemList {
 
     const struct ListOfNeuNodes * children;
+
     const struct SourceLocation start;
+    
     const struct SourceLocation end;
 };
 

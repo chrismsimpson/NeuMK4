@@ -7,6 +7,7 @@ struct ListOfNeuTokens * createEmptyListOfNeuTokens() {
     if ((tokens = malloc(sizeof * tokens)) != NULL) {
 
         tokens->tokens = NULL;
+        
         * (int *) &tokens->count = 0;
     }
 
@@ -31,6 +32,8 @@ struct SourceLocation getNeuTokenStart(
     switch (token->tokenType) {
 
     case neuTokenTypePunc:
+
+        // struct Neu
 
         break;
 

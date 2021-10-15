@@ -11,7 +11,9 @@
 struct NeuSourceFile {
 
     const struct ListOfNeuNodes * children;
+    
     const struct SourceLocation start;
+
     const struct SourceLocation end;
 };
 

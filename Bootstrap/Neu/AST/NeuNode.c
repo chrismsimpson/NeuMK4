@@ -24,6 +24,7 @@ void addNodeToListOfNeuNodes(
         ///
 
         list->nodes = newNodes;
+
         * (int *) &list->length = newLength;
     }
 }
@@ -37,6 +38,7 @@ struct ListOfNeuNodes * createEmptyListOfNeuNodes() {
     if ((nodes = malloc(sizeof * nodes)) != NULL) {
 
         nodes->nodes = NULL;
+
         * (int *) &nodes->length = 0;
     }
 
@@ -52,6 +54,7 @@ struct NeuNode * createNeuNode(
     if ((node = malloc(sizeof * node)) != NULL) {
 
         * (enum NeuNodeType *) &node->nodeType = nodeType;
+        
         node->value = value;
     }
 

@@ -13,6 +13,7 @@ struct Scanner * createScanner(
     if ((scanner = malloc(sizeof * scanner)) != NULL) {
         
         * (size_t *) &scanner->scannerType = scannerType;
+
         * (int *) &scanner->length = length;
 
         ///
@@ -77,6 +78,8 @@ struct Scanner * createScannerFromString(
     return createScanner(scannerTypeStringSource, strlen(source), NULL, source);
 }
 
+///
+
 void deleteScanner(
     struct Scanner * scanner) {
 
@@ -112,6 +115,8 @@ void deleteScanner(
     scanner = NULL;
 }
 
+///
+
 struct SourceLocation getScannerPosition(
     const struct Scanner * scanner) {
 
@@ -123,8 +128,68 @@ struct SourceLocation getScannerPosition(
     return sourceLocation;
 }
 
+///
+
 bool isScannerAtEof(
     const struct Scanner * scanner) {
 
     return scanner->rawPosition >= scanner->length;
+}
+
+char rawNext(
+    const struct Scanner * scanner) {
+
+    char * next = rawNextLength(scanner, 1);
+
+    char value = * next;
+
+    free(next);
+
+    return value;
+}
+
+char * rawNextLength(
+    const struct Scanner * scanner,
+    const int length) {
+
+    char * buffer;
+
+    buffer = malloc(length * sizeof(char));
+
+    ///
+
+    switch (scanner->scannerType) {
+
+    case scannerTypeFile:
+
+        if (fseek((FILE *) scanner->file, scanner->rawPosition, SEEK_SET) != 0) {
+
+            // FIXME: throw error
+        }
+
+        ///
+
+        if (fread(buffer, sizeof(char), length, (FILE *) scanner->file) != length) {
+
+            // FIXME: throw error
+        }
+
+        return buffer;
+
+    ///
+
+    case scannerTypeStringSource:
+
+        strncpy(buffer, &scanner->source[scanner->rawPosition], length);
+
+        ///
+
+        return buffer;
+
+    ///
+
+    default:
+
+        return NULL; // FIXME: throw error
+    }
 }

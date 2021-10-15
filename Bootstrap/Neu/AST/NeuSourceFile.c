@@ -10,7 +10,9 @@ struct NeuSourceFile * createNeuSourceFile(
     if ((sourceFile = malloc(sizeof * sourceFile)) != NULL) {
         
         sourceFile->children = children;
+        
         * (struct SourceLocation *) &sourceFile->start = start;
+
         * (struct SourceLocation *) &sourceFile->end = end;
     }
 

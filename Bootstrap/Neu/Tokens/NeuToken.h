@@ -8,7 +8,8 @@
 
 enum NeuTokenType {
 
-    neuTokenTypePunc
+    neuTokenTypePunc,
+    neuTokenTypeKeyword
 };
 
 struct NeuToken {

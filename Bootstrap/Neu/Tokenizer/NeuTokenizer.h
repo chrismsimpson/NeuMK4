@@ -16,7 +16,7 @@ struct NeuTokenizer {
 
     const struct ListOfNeuTokens * tokenList;
 
-    int index;
+    int rawPosition;
 };
 
 ///
@@ -36,5 +36,13 @@ struct SourceLocation getNeuTokenizerPosition(
 
 bool isNeuTokenizerAtEof(
     const struct NeuTokenizer * tokenizer);
+
+///
+
+struct NeuToken * peekNeuToken(
+    struct NeuTokenizer * tokenizer);
+
+struct NeuToken * rawNextNeuToken(
+    struct NeuTokenizer * tokenizer);
 
 #endif

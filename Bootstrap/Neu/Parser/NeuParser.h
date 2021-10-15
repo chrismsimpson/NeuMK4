@@ -16,17 +16,20 @@ struct NeuParser {
     const struct NeuTokenizer * tokenizer;
 };
 
+///
+
 struct NeuParser * createNeuParser(
     const struct NeuTokenizer * tokenizer);
 
 struct NeuParser * createNeuParserFromFile(
     const char * filename);
 
+///
+
 void deleteNeuParser(
     struct NeuParser * p);
 
-// bool neuParserIsEof(
-//     struct NeuParser * parser);
+/// 
 
 struct NeuNode * parseNeuSourceFile(
     const struct NeuParser * parser);

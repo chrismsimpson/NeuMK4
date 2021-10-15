@@ -15,7 +15,7 @@ struct NeuTokenizer * createNeuTokenizer(
 
         tokenizer->tokenList = createEmptyListOfNeuTokens();
 
-        tokenizer->index = 0;
+        tokenizer->rawPosition = 0;
     }
 
     return tokenizer;
@@ -50,9 +50,9 @@ void deleteNeuTokenizer(
 struct SourceLocation getNeuTokenizerPosition(
     const struct NeuTokenizer * tokenizer) {
 
-    if (tokenizer->index + 1 <= tokenizer->tokenList->count) {
+    if (tokenizer->rawPosition + 1 <= tokenizer->tokenList->count) {
 
-        return getNeuTokenStart(&tokenizer->tokenList->tokens[tokenizer->index]);
+        return getNeuTokenStart(&tokenizer->tokenList->tokens[tokenizer->rawPosition]);
     }
 
     ///
@@ -75,4 +75,34 @@ bool isNeuTokenizerAtEof(
     }
 
     return false; 
+}
+
+///
+
+struct NeuToken * peekNeuToken(
+    struct NeuTokenizer * tokenizer) {
+
+    if (tokenizer->rawPosition + 1 <= tokenizer->tokenList->count) {
+        
+        return (struct NeuToken *) &tokenizer->tokenList->tokens[tokenizer->rawPosition];
+    }
+
+    ///
+
+    if (isScannerAtEof(tokenizer->scanner)) {
+
+        return NULL;
+    }
+
+    ///
+
+    
+
+    return NULL;
+}
+
+struct NeuToken * rawNextNeuToken(
+    struct NeuTokenizer * tokenizer) {
+
+    return NULL;
 }

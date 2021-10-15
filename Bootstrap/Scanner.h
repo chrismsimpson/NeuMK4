@@ -27,7 +27,9 @@ struct Scanner {
     ///
 
     int rawPosition;
+    
     int lineNumber;
+
     int column;
 };
 
@@ -51,5 +53,12 @@ struct SourceLocation getScannerPosition(
 
 bool isScannerAtEof(
     const struct Scanner * scanner);
+
+char rawNext(
+    const struct Scanner * scanner);
+
+char * rawNextLength(
+    const struct Scanner * scanner,
+    const int length);
 
 #endif
