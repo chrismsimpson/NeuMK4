@@ -1,9 +1,31 @@
 #include "NeuNode.h"
 
 void addNodeToListOfNeuNodes(
-    const struct ListOfNeuNodes * list,
+    struct ListOfNeuNodes * list,
     const struct NeuNode * node) {
 
+    int newLength = list->length + 1;
+
+    struct NeuNode * newNodes;
+
+    if ((newNodes = malloc(newLength * sizeof * node)) != NULL) {
+
+        if (list->length > 0) {
+
+            memcpy(newNodes, list->nodes, list->length);
+        }
+
+        ///
+
+        struct NeuNode * last = &newNodes[list->length];
+
+        last = (struct NeuNode *) node;
+
+        ///
+
+        list->nodes = newNodes;
+        * (int *) &list->length = newLength;
+    }
 }
 
 ///
@@ -15,7 +37,7 @@ struct ListOfNeuNodes * createEmptyListOfNeuNodes() {
     if ((nodes = malloc(sizeof * nodes)) != NULL) {
 
         nodes->nodes = NULL;
-        * (int *) &nodes->count = 0;
+        * (int *) &nodes->length = 0;
     }
 
     return nodes;

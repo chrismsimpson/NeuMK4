@@ -59,3 +59,20 @@ struct SourceLocation getNeuTokenizerPosition(
 
     return getScannerPosition(tokenizer->scanner);
 }
+
+///
+
+bool isNeuTokenizerAtEof(
+    const struct NeuTokenizer * tokenizer) {
+
+    struct SourceLocation tokenizerPosition = getNeuTokenizerPosition(tokenizer);
+
+    struct SourceLocation scannerPosition = getScannerPosition(tokenizer->scanner);
+
+    if (tokenizerPosition.rawPosition == scannerPosition.rawPosition) {
+
+        return isScannerAtEof(tokenizer->scanner);
+    }
+
+    return false; 
+}

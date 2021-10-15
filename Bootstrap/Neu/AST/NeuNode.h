@@ -3,12 +3,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct ListOfNeuNodes {
 
     const struct NeuNode * nodes;
 
-    const int count;
+    const int length;
 };
 
 enum NeuNodeType {
@@ -28,7 +29,7 @@ struct NeuNode {
 ///
 
 void addNodeToListOfNeuNodes(
-    const struct ListOfNeuNodes * list,
+    struct ListOfNeuNodes * list,
     const struct NeuNode * node);
 
 ///

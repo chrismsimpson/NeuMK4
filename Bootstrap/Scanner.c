@@ -2,6 +2,7 @@
 
 struct Scanner * createScanner(
     enum ScannerType scannerType, 
+    const int length,
     const FILE * file,
     const char * source) {
 
@@ -12,6 +13,7 @@ struct Scanner * createScanner(
     if ((scanner = malloc(sizeof * scanner)) != NULL) {
         
         * (size_t *) &scanner->scannerType = scannerType;
+        * (int *) &scanner->length = length;
 
         ///
 
@@ -53,15 +55,26 @@ struct Scanner * createScanner(
 struct Scanner * createScannerFromFile(
     const char * filename) {
 
+    struct stat s;
+
+    if (stat(filename, &s) == -1) {
+
+        // FIXME: throw an error
+    }
+
+    ///
+
     FILE * file = fopen(filename, "r");
 
-    return createScanner(scannerTypeFile, file, NULL);
+    ///
+
+    return createScanner(scannerTypeFile, s.st_size, file, NULL);
 }
 
 struct Scanner * createScannerFromString(
     const char * source) {
 
-    return createScanner(scannerTypeStringSource, NULL, source);
+    return createScanner(scannerTypeStringSource, strlen(source), NULL, source);
 }
 
 void deleteScanner(
@@ -108,4 +121,10 @@ struct SourceLocation getScannerPosition(
         scanner->column};
 
     return sourceLocation;
+}
+
+bool isScannerAtEof(
+    const struct Scanner * scanner) {
+
+    return scanner->rawPosition >= scanner->length;
 }

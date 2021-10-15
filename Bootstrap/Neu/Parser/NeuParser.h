@@ -1,6 +1,7 @@
 #ifndef NEU_PARSER_H
 #define NEU_PARSER_H
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -24,10 +25,16 @@ struct NeuParser * createNeuParserFromFile(
 void deleteNeuParser(
     struct NeuParser * p);
 
+// bool neuParserIsEof(
+//     struct NeuParser * parser);
+
 struct NeuNode * parseNeuSourceFile(
     const struct NeuParser * parser);
 
 struct NeuNode * parseNeuCodeBlockItemList(
+    const struct NeuParser * parser);
+
+struct ListOfNeuNodes * parseNeuCodeBlockItems(
     const struct NeuParser * parser);
 
 #endif

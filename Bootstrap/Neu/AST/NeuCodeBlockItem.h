@@ -24,6 +24,9 @@ struct NeuCodeBlockItem {
 
 struct NeuCodeBlockItemList {
 
+    const struct ListOfNeuNodes * children;
+    const struct SourceLocation start;
+    const struct SourceLocation end;
 };
 
 ///
@@ -35,7 +38,15 @@ struct NeuCodeBlockItem * createNeuCodeBlockItem(
     const struct SourceLocation start,
     const struct SourceLocation end);
 
+struct NeuCodeBlockItemList * createNeuCodeBlockItemList(
+    const struct ListOfNeuNodes * children,
+    const struct SourceLocation start,
+    const struct SourceLocation end);
+
 ///
+
+void deleteListOfNeuCodeBlockItems(
+    struct ListOfNeuCodeBlockItems * list);
 
 void deleteNeuCodeBlockItem(
     struct NeuCodeBlockItem * item);

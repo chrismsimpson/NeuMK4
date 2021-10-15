@@ -1,7 +1,7 @@
 ## Setting up CMake with Ninja
 
 ```
-cmake Start -B Build -G Ninja
+cmake Bootstrap -B Build -G Ninja
 ```
 
 ## Building

@@ -2,6 +2,7 @@
 #define NEU_TOKENIZER_H
 
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 
 #include "../../Scanner.h"
@@ -29,6 +30,11 @@ struct NeuTokenizer * createNeuTokenizerFromFile(
 ///
 
 struct SourceLocation getNeuTokenizerPosition(
+    const struct NeuTokenizer * tokenizer);
+
+///
+
+bool isNeuTokenizerAtEof(
     const struct NeuTokenizer * tokenizer);
 
 #endif

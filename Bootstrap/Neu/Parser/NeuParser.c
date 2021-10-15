@@ -36,6 +36,12 @@ void deleteNeuParser(
     parser = NULL;
 }
 
+// bool neuParserIsEof(
+//     struct NeuParser * parser) {
+
+//     return false;
+// }
+
 struct NeuNode * parseNeuSourceFile(
     const struct NeuParser * parser) {
 
@@ -47,9 +53,11 @@ struct NeuNode * parseNeuSourceFile(
 
     ///
 
-    struct NeuNode * list = parseNeuCodeBlockItemList(parser);
+    struct NeuNode * itemList = parseNeuCodeBlockItemList(parser);
 
+    addNodeToListOfNeuNodes(children, itemList);
 
+    ///
 
     return createNeuNode(neuNodeTypeSourceFile, NULL);
 }
@@ -61,10 +69,31 @@ struct NeuNode * parseNeuCodeBlockItemList(
 
     ///
 
-
+    struct ListOfNeuNodes * items = parseNeuCodeBlockItems(parser);
 
     ///
 
-    return createNeuNode(neuNodeTypeCodeBlockItemList, NULL);
+    struct NeuCodeBlockItemList * itemList = createNeuCodeBlockItemList(items, start, getNeuTokenizerPosition(parser->tokenizer));
+
+    ///
+
+    return createNeuNode(neuNodeTypeCodeBlockItemList, itemList);
 }
 
+struct ListOfNeuNodes * parseNeuCodeBlockItems(
+    const struct NeuParser * parser) {
+
+    struct ListOfNeuNodes * list = createEmptyListOfNeuNodes();
+
+    ///
+
+    bool done = false;
+
+    // while () {
+
+    // }
+
+
+
+    return NULL;
+}

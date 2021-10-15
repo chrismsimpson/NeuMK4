@@ -1,10 +1,12 @@
 {
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-    "cmake.sourceDirectory": "${workspaceFolder}/Start",
+    "cmake.sourceDirectory": "${workspaceFolder}/Bootstrap",
     "cmake.buildDirectory": "${workspaceFolder}/Build",
     "files.associations": {
         "stdio.h": "c",
         "neutokenizer.h": "c",
-        "neuparser.h": "c"
+        "neuparser.h": "c",
+        "stdbool.h": "c",
+        "__config": "cpp"
     }
 }

@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <sys/stat.h>
 
 #include "SourceLocation.h"
 
@@ -16,6 +18,8 @@ struct Scanner {
 
     const enum ScannerType scannerType;
 
+    const int length;
+
     const char * source;
 
     const FILE * file;
@@ -28,7 +32,8 @@ struct Scanner {
 };
 
 struct Scanner * createScanner(
-    enum ScannerType scannerType, 
+    enum ScannerType scannerType,
+    const int length,
     const FILE * file,
     const char * source);
 
@@ -42,6 +47,9 @@ void deleteScanner(
     struct Scanner * s);
 
 struct SourceLocation getScannerPosition(
+    const struct Scanner * scanner);
+
+bool isScannerAtEof(
     const struct Scanner * scanner);
 
 #endif
