@@ -15,9 +15,9 @@ struct NeuKeyword {
 
     const char * source;
 
-    const SourceLocation start;
+    const struct SourceLocation start;
 
-    const SourceLocation end;
+    const struct SourceLocation end;
 };
 
 #endif

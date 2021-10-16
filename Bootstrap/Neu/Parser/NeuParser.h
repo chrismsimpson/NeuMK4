@@ -5,8 +5,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "../../SourceLocation.h"
+
 #include "../AST/NeuSourceFile.h"
 #include "../AST/NeuCodeBlockItem.h"
+
 #include "../Tokenizer/NeuTokenizer.h"
 
 #include "NeuParser.h"

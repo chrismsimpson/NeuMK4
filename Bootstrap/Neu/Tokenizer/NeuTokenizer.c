@@ -69,10 +69,14 @@ bool isNeuTokenizerAtEof(
 
     struct SourceLocation scannerPosition = getScannerPosition(tokenizer->scanner);
 
+    ///
+
     if (tokenizerPosition.rawPosition == scannerPosition.rawPosition) {
 
         return isScannerAtEof(tokenizer->scanner);
     }
+
+    ///
 
     return false; 
 }
