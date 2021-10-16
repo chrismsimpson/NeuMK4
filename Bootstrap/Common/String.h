@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 
-const char * getAbsolutePathString(
+extern const char * getAbsolutePathString(
     const char * source);
 
 #endif
