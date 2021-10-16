@@ -15,16 +15,16 @@ struct Path {
 
 ///
 
-struct Path * createPath(
+extern struct Path * createPath(
     const struct ListOfPathTokens * tokenList);
 
 ///
 
-void deletePath(
+extern void deletePath(
     struct Path * path);
 
 ///
 
-const struct Path * getCurrentDirectoryPath();
+extern const struct Path * getCurrentDirectoryPath();
 
 #endif

@@ -17,22 +17,22 @@ struct PathParser {
 
 ///
 
-struct PathParser * createPathParser(
+extern struct PathParser * createPathParser(
     const struct PathTokenizer * tokenizer);
 
-struct PathParser * createPathParserFromString(
+extern struct PathParser * createPathParserFromString(
     const char * source);
 
 ///
 
-void deletePathParser(
+extern void deletePathParser(
     struct PathParser * parser);
 
 ///
 
-const struct Path * parsePath();
+extern const struct Path * parsePath();
 
-const struct ListOfPathTokens * parsePathTokens(
+extern const struct ListOfPathTokens * parsePathTokens(
     const struct PathParser * parser);
 
 #endif

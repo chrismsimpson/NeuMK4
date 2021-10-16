@@ -35,27 +35,27 @@ struct NeuCodeBlockItemList {
 
 ///
 
-struct ListOfNeuCodeBlockItems * createEmptyListOfNeuCodeBlockItems();
+extern struct ListOfNeuCodeBlockItems * createEmptyListOfNeuCodeBlockItems();
 
-struct NeuCodeBlockItem * createNeuCodeBlockItem(
+extern struct NeuCodeBlockItem * createNeuCodeBlockItem(
     const struct ListOfNeuNodes * children,
     const struct SourceLocation start,
     const struct SourceLocation end);
 
-struct NeuCodeBlockItemList * createNeuCodeBlockItemList(
+extern struct NeuCodeBlockItemList * createNeuCodeBlockItemList(
     const struct ListOfNeuNodes * children,
     const struct SourceLocation start,
     const struct SourceLocation end);
 
 ///
 
-void deleteListOfNeuCodeBlockItems(
+extern void deleteListOfNeuCodeBlockItems(
     struct ListOfNeuCodeBlockItems * list);
 
-void deleteNeuCodeBlockItem(
+extern void deleteNeuCodeBlockItem(
     struct NeuCodeBlockItem * item);
 
-void deleteNeuCodeBlockItemList(
+extern void deleteNeuCodeBlockItemList(
     struct NeuCodeBlockItemList * itemList);
 
 #endif

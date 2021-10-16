@@ -1,6 +1,6 @@
 #include "PathParser.h"
 
-#include "../Tokenizer/PathTokenizer.c"
+// #include "../Tokenizer/PathTokenizer.c"
 
 struct PathParser * createPathParser(
     const struct PathTokenizer * tokenizer) {

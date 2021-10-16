@@ -19,12 +19,14 @@ struct NeuSourceFile {
 
 ///
 
-struct NeuSourceFile * createNeuSourceFile(
+extern struct NeuSourceFile * createNeuSourceFile(
     const struct ListOfNeuNodes * nodes,
     const struct SourceLocation start,
     const struct SourceLocation end);
 
-void deleteNeuSourceFile(
+///
+
+extern void deleteNeuSourceFile(
     struct NeuSourceFile * sourceFile);
 
 #endif

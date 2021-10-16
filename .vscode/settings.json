@@ -7,6 +7,9 @@
         "neutokenizer.h": "c",
         "neuparser.h": "c",
         "stdbool.h": "c",
-        "__config": "cpp"
+        "__config": "cpp",
+        "neutoken.h": "c",
+        "neucodeblockitem.h": "c",
+        "neunode.h": "c"
     }
 }

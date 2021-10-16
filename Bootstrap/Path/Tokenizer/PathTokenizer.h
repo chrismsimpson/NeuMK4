@@ -21,25 +21,25 @@ struct PathTokenizer {
 
 ///
 
-struct PathTokenizer * createPathTokenizer(
+extern struct PathTokenizer * createPathTokenizer(
     const struct Scanner * scanner);
 
-struct PathTokenizer * createPathTokenizerFromString(
+extern struct PathTokenizer * createPathTokenizerFromString(
     const char * source);
 
 ///
 
-void deletePathTokenizer(
+extern void deletePathTokenizer(
     struct PathTokenizer * tokenizer);
 
 ///
 
-struct SourceLocation getPathTokenizerPosition(
+extern struct SourceLocation getPathTokenizerPosition(
     const struct PathTokenizer * tokenizer);
 
 ///
 
-bool isPathTokenizerAtEof(
+extern bool isPathTokenizerAtEof(
     const struct PathTokenizer * tokenizer);
 
 #endif

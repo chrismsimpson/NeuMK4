@@ -1,9 +1,5 @@
 #include "NeuTokenizer.h"
 
-#include "../../Scanner.c"
-
-#include "../Tokens/NeuToken.c"
-
 struct NeuTokenizer * createNeuTokenizer(
     const struct Scanner * scanner) {
 

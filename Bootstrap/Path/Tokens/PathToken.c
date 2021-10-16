@@ -14,7 +14,7 @@ void deleteListOfPathTokens(
 
 ///
 
-struct SourceLocation getPathTokenStart(
+const struct SourceLocation getPathTokenStart(
     const struct PathToken * token) {
 
     switch (token->tokenType) {

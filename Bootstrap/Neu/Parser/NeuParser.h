@@ -21,26 +21,26 @@ struct NeuParser {
 
 ///
 
-struct NeuParser * createNeuParser(
+extern struct NeuParser * createNeuParser(
     const struct NeuTokenizer * tokenizer);
 
-struct NeuParser * createNeuParserFromFile( 
+extern struct NeuParser * createNeuParserFromFile( 
     const char * filename);
 
 ///
 
-void deleteNeuParser(
+extern void deleteNeuParser(
     struct NeuParser * p);
 
 /// 
 
-struct NeuNode * parseNeuSourceFile(
+extern struct NeuNode * parseNeuSourceFile(
     const struct NeuParser * parser);
 
-struct NeuNode * parseNeuCodeBlockItemList(
+extern struct NeuNode * parseNeuCodeBlockItemList(
     const struct NeuParser * parser);
 
-struct ListOfNeuNodes * parseNeuCodeBlockItems(
+extern struct ListOfNeuNodes * parseNeuCodeBlockItems(
     const struct NeuParser * parser);
 
 #endif

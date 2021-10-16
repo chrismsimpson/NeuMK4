@@ -1,11 +1,5 @@
 #include "NeuParser.h"
 
-#include "../AST/NeuCodeBlockItem.c"
-#include "../AST/NeuNode.c"
-#include "../AST/NeuSourceFile.c"
-
-#include "../Tokenizer/NeuTokenizer.c"
-
 struct NeuParser * createNeuParser(
     const struct NeuTokenizer * tokenizer) {
 

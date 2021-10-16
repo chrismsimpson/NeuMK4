@@ -28,16 +28,16 @@ struct ListOfNeuTokens {
 
 ///
 
-struct ListOfNeuTokens * createEmptyListOfNeuTokens();
+extern struct ListOfNeuTokens * createEmptyListOfNeuTokens();
 
 ///
 
-void deleteListOfNeuTokens(
+extern void deleteListOfNeuTokens(
     struct ListOfNeuTokens * tokenList);
 
 ///
 
-struct SourceLocation getNeuTokenStart(
+extern struct SourceLocation getNeuTokenStart(
     const struct NeuToken * token);
 
 #endif

@@ -27,16 +27,16 @@ struct ListOfPathTokens {
 
 ///
 
-struct ListOfPathTokens * createEmptyListOfPathTokens();
+extern struct ListOfPathTokens * createEmptyListOfPathTokens();
 
 ///
 
-void deleteListOfPathTokens(
+extern void deleteListOfPathTokens(
     struct ListOfPathTokens * tokenList);
 
 ///
 
-struct SourceLocation getPathTokenStart(
+extern const struct SourceLocation getPathTokenStart(
     const struct PathToken * token);
 
 #endif

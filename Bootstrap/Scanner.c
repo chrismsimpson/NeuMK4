@@ -117,7 +117,7 @@ void deleteScanner(
 
 ///
 
-struct SourceLocation getScannerPosition(
+const struct SourceLocation getScannerPosition(
     const struct Scanner * scanner) {
 
     struct SourceLocation sourceLocation = {
@@ -130,7 +130,7 @@ struct SourceLocation getScannerPosition(
 
 ///
 
-bool isScannerAtEof(
+const bool isScannerAtEof(
     const struct Scanner * scanner) {
 
     return scanner->rawPosition >= scanner->length;

@@ -1,8 +1,8 @@
 #include "PathTokenizer.h"
 
-#include "../../Scanner.c"
+// #include "../../Scanner.c"
 
-#include "../Tokens/PathToken.c"
+// #include "../Tokens/PathToken.c"
 
 struct PathTokenizer * createPathTokenizer(
     const struct Scanner * scanner) {

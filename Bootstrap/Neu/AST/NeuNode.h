@@ -5,6 +5,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "NeuCodeBlockItem.h"
+#include "NeuSourceFile.h"
+
 struct ListOfNeuNodes {
 
     const struct NeuNode * nodes;
@@ -28,20 +31,26 @@ struct NeuNode {
 
 ///
 
-void addNodeToListOfNeuNodes(
+extern void addNodeToListOfNeuNodes(
     struct ListOfNeuNodes * list,
     const struct NeuNode * node);
 
 ///
 
-struct ListOfNeuNodes * createEmptyListOfNeuNodes();
+extern struct ListOfNeuNodes * createEmptyListOfNeuNodes();
 
 ///
 
-void deleteListOfNeuNodes(
+extern struct NeuNode * createNeuNode(
+    const enum NeuNodeType nodeType,
+    const void * value);
+
+///
+
+extern void deleteListOfNeuNodes(
     struct ListOfNeuNodes * nodes);
 
-void deleteNeuNode(
+extern void deleteNeuNode(
     struct NeuNode * node);
 
 #endif

@@ -1,6 +1,7 @@
 #ifndef SCANNER_H
 #define SCANNER_H
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -33,31 +34,41 @@ struct Scanner {
     int column;
 };
 
-struct Scanner * createScanner(
+///
+
+extern struct Scanner * createScanner(
     enum ScannerType scannerType,
     const int length,
     const FILE * file,
     const char * source);
 
-struct Scanner * createScannerFromFile(
+extern struct Scanner * createScannerFromFile(
     const char * filename);
 
-struct Scanner * createScannerFromString(
+extern struct Scanner * createScannerFromString(
     const char * source);
 
-void deleteScanner(
+///
+
+extern void deleteScanner(
     struct Scanner * s);
 
-struct SourceLocation getScannerPosition(
+///
+
+extern const struct SourceLocation getScannerPosition(
     const struct Scanner * scanner);
 
-bool isScannerAtEof(
+///
+
+extern const bool isScannerAtEof(
     const struct Scanner * scanner);
 
-char rawNext(
+///
+
+extern char rawNext(
     const struct Scanner * scanner);
 
-char * rawNextLength(
+extern char * rawNextLength(
     const struct Scanner * scanner,
     const int length);
 

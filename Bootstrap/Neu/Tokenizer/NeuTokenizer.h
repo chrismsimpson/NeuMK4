@@ -21,28 +21,28 @@ struct NeuTokenizer {
 
 ///
 
-struct NeuTokenizer * createNeuTokenizer(
+extern struct NeuTokenizer * createNeuTokenizer(
     const struct Scanner * scanner);
 
-struct NeuTokenizer * createNeuTokenizerFromFile(
+extern struct NeuTokenizer * createNeuTokenizerFromFile(
     const char * filename);
 
 ///
 
-struct SourceLocation getNeuTokenizerPosition(
+extern struct SourceLocation getNeuTokenizerPosition(
     const struct NeuTokenizer * tokenizer);
 
 ///
 
-bool isNeuTokenizerAtEof(
+extern bool isNeuTokenizerAtEof(
     const struct NeuTokenizer * tokenizer);
 
 ///
 
-struct NeuToken * peekNeuToken(
+extern struct NeuToken * peekNeuToken(
     struct NeuTokenizer * tokenizer);
 
-struct NeuToken * rawNextNeuToken(
+extern struct NeuToken * rawNextNeuToken(
     struct NeuTokenizer * tokenizer);
 
 #endif
