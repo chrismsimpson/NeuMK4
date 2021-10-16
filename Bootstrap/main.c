@@ -9,9 +9,9 @@
 
 // #include "Path/Tokenizer/PathTokenizer.h"
 
-#include "Path/Parser/PathParser.h"
-
 #include "Neu/Parser/NeuParser.c"
+
+// #include "Path/Parser/PathParser.c"
 
 int main() {
 

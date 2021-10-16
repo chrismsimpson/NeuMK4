@@ -1,5 +1,19 @@
 #include "PathToken.h"
 
+struct ListOfPathTokens * createEmptyListOfPathTokens() {
+
+    return NULL;
+}
+
+///
+
+void deleteListOfPathTokens(
+    struct ListOfPathTokens * tokenList) {
+
+}
+
+///
+
 struct SourceLocation getPathTokenStart(
     const struct PathToken * token) {
 

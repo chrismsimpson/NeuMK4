@@ -1,5 +1,7 @@
 #include "PathParser.h"
 
+#include "../Tokenizer/PathTokenizer.c"
+
 struct PathParser * createPathParser(
     const struct PathTokenizer * tokenizer) {
 
@@ -46,6 +48,15 @@ const struct ListOfPathTokens * parsePathTokens(
     const struct PathParser * parser) {
 
     struct ListOfPathTokens * tokenList = createEmptyListOfPathTokens();
+
+    ///
+
+    while (!isPathTokenizerAtEof(parser->tokenizer)) {
+
+
+    }
+
+    ///
 
     return NULL;
 }

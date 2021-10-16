@@ -1,6 +1,8 @@
 #ifndef PATH_TOKEN_H
 #define PATH_TOKEN_H
 
+#include <stdio.h>
+
 #include "../../SourceLocation.h"
 
 enum PathTokenType {
@@ -22,6 +24,8 @@ struct ListOfPathTokens {
 
     const int length;
 };
+
+///
 
 struct ListOfPathTokens * createEmptyListOfPathTokens();
 

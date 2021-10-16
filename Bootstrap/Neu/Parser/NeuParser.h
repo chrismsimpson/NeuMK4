@@ -24,7 +24,7 @@ struct NeuParser {
 struct NeuParser * createNeuParser(
     const struct NeuTokenizer * tokenizer);
 
-struct NeuParser * createNeuParserFromFile(
+struct NeuParser * createNeuParserFromFile( 
     const char * filename);
 
 ///

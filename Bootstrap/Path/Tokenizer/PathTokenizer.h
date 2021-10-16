@@ -34,6 +34,11 @@ void deletePathTokenizer(
 
 ///
 
+struct SourceLocation getPathTokenizerPosition(
+    const struct PathTokenizer * tokenizer);
+
+///
+
 bool isPathTokenizerAtEof(
     const struct PathTokenizer * tokenizer);
 
