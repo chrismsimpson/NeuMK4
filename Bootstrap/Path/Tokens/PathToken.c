@@ -1,5 +1,14 @@
 #include "PathToken.h"
 
+void addTokenToListOfPathTokens(
+    struct ListOfPathTokens * tokenList,
+    const struct PathToken * token) {
+
+    
+}
+
+///
+
 struct ListOfPathTokens * createEmptyListOfPathTokens() {
 
     return NULL;

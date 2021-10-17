@@ -34,12 +34,18 @@ extern void deletePathTokenizer(
 
 ///
 
-extern struct SourceLocation getPathTokenizerPosition(
-    const struct PathTokenizer * tokenizer);
+extern const struct PathToken * getNextPathToken(
+    struct PathTokenizer * tokenier);
 
 ///
 
-extern bool isPathTokenizerAtEof(
+extern struct SourceLocation getPathTokenizerPosition(
+    const struct PathTokenizer * tokenizer);
+
+
+///
+
+extern const bool isPathTokenizerAtEof(
     const struct PathTokenizer * tokenizer);
 
 #endif

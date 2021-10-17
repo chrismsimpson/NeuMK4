@@ -54,6 +54,7 @@ const struct ListOfPathTokens * parsePathTokens(
     while (!isPathTokenizerAtEof(parser->tokenizer)) {
 
 
+        getNextPathToken(parser->tokenizer);
     }
 
     ///

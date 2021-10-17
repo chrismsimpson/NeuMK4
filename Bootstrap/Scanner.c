@@ -123,7 +123,10 @@ const struct SourceLocation getScannerPosition(
     struct SourceLocation sourceLocation = {
         scanner->rawPosition, 
         scanner->lineNumber, 
-        scanner->column};
+        scanner->column
+    };
+
+    ///
 
     return sourceLocation;
 }

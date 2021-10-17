@@ -1,8 +1,9 @@
 #include "PathTokenizer.h"
 
-// #include "../../Scanner.c"
+const struct PathToken * rawGetNextPathToken(
+    struct PathTokenizer * tokenizer);
 
-// #include "../Tokens/PathToken.c"
+///
 
 struct PathTokenizer * createPathTokenizer(
     const struct Scanner * scanner) {
@@ -35,6 +36,44 @@ void deletePathTokenizer(
     tokenizer = NULL;
 }
 
+//
+
+const struct PathToken * getNextPathToken(
+    struct PathTokenizer * tokenizer) {
+
+    if (tokenizer->rawPosition + 1 <= tokenizer->tokenList->length) {
+
+        struct PathToken * token = (struct PathToken *) &tokenizer->tokenList->tokens[tokenizer->rawPosition];
+
+        tokenizer->rawPosition += 1;
+
+        return token;
+    }
+    
+    ///
+
+    if (isScannerAtEof(tokenizer->scanner)) {
+
+        return NULL;
+    }
+
+    ///
+
+    const struct PathToken * next = rawGetNextPathToken(tokenizer);
+
+    
+
+    ///
+
+    return NULL;
+}
+
+const struct PathToken * rawGetNextPathToken(
+    struct PathTokenizer * tokenizer) {
+
+    return NULL;
+}
+
 ///
 
 struct SourceLocation getPathTokenizerPosition(
@@ -52,7 +91,7 @@ struct SourceLocation getPathTokenizerPosition(
 
 ///
 
-bool isPathTokenizerAtEof(
+const bool isPathTokenizerAtEof(
     const struct PathTokenizer * tokenizer) {
 
     struct SourceLocation tokenizerPosition = getPathTokenizerPosition(tokenizer);

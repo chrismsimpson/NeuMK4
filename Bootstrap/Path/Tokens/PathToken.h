@@ -27,6 +27,12 @@ struct ListOfPathTokens {
 
 ///
 
+extern void addTokenToListOfPathTokens(
+    struct ListOfPathTokens * tokenList,
+    const struct PathToken * token);
+
+///
+
 extern struct ListOfPathTokens * createEmptyListOfPathTokens();
 
 ///
